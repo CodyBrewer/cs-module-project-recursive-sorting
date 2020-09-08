@@ -7,21 +7,15 @@ def merge(arrA, arrB):
     indexB = 0 # current index pointer for arrayB
     mergeIndex = 0 # index of our merged arr
           
-    # while indexA is less then the length of arrayA and indexB is less than the arrayB
+    # while indexA is less then the length of arrayA and indexB is less than the arrayB (both arrays contain values)
     while indexA < len(arrA) and indexB < len(arrB): 
-        # if the value of a is greater than b
-        if arrA[indexA] < arrB[indexB]:
-            # set the current index of the mergeINdex to the current index of A
-            merged_arr[mergeIndex] = arrA[indexA] 
-            # increment the indexA pointer
-            indexA += 1
-        else: 
-            # set the current index of the mergeIndex to the current index of B
-            merged_arr[mergeIndex] = arrB[indexB]
-            # increment the indexB pointer
-            indexB += 1
-        # increment the mergeIndex pointer
-        mergeIndex += 1
+        if arrA[indexA] < arrB[indexB]: # if the value of arrA at the current indexA is greater than value of arrB at the current indexB
+            merged_arr[mergeIndex] = arrA[indexA] # set the current index of the mergeIndex to the current index of A
+            indexA += 1 # increment the indexA pointer
+        else: # the value of arrB at the current indexB is greater than arrA at the current indexA
+            merged_arr[mergeIndex] = arrB[indexB] # set the current index of the mergeIndex to the current index of B
+            indexB += 1 # increment the indexB pointer
+        mergeIndex += 1 # increment the mergeIndex pointer
     # while arrayB is not empty but arrayB is
     while indexA < len(arrA): 
         # set the current index of the merged_arr to the arrA current index
